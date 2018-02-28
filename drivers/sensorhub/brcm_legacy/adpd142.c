@@ -388,7 +388,7 @@ cmd_parsing(const char *buf, unsigned short cnt, unsigned short *data)
 		}
 
 		if (parsing_cnt < cnt)
-			*(data + parsing_cnt) = val;
+			*(data + parsing_cnt) = (unsigned short)val;
 		else
 			break;
 		parsing_cnt++;
@@ -2552,7 +2552,6 @@ static const struct dev_pm_ops adpd_pm_ops = {
   @brief the name has to get matched to the board configuration file setup
  */
 /*static struct i2c_device_id adpd_id[] = { {ADPD_DEV_NAME, 0}, {} };
-
 MODULE_DEVICE_TABLE(i2c, adpd_id);*/
 
 static struct of_device_id adpd_match_table[] = {
